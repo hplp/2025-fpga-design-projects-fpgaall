@@ -41,13 +41,12 @@ solutions in real-time medical image analysis, ultimately guiding the best appro
 
 ## Tasks:
 (Describe the tasks that need to be completed. Assign students to tasks)
-1- Proposed system description descritpion for lung cancer image classification using jupyter notebook 
+# 1- Proposed system description descritpion for lung cancer image classification using jupyter notebook 
 We propose a system combining image analysis, an edge detector, and a 3-layer Convolution Neural Network as shown in the figure1. In the image analysis part, the system reads 
 the gray image, preprocesses it, detects edges, finally  normalizes it to a fixed size, and stores it as a binary image 
 array. For training and classification, it uses a 3-layer CNN  with a flattened layer and fully connected layer followed by an output layer of four classes. We used Python programming language to implement this system and used OpenCV for processing and analyzing images. Python modules pandas, NumPy, Matplotlib, Sklearn, TensorFlow modules, and Keras framework are used to build CNN model, training, and classification of lung cancer
-a. Description of the steps of the image classification with jupyter
-![image](https://github.com/user-attachments/assets/e1e4eea4-475e-44b2-8652-9d62e869a543)
 
+![figue 1 github](https://github.com/user-attachments/assets/8d59f756-5343-404e-a328-c7736db7452c)
 
 ## Timeline:
 (Provide a timeline or milestones for the project)
