@@ -19,6 +19,8 @@ solutions in real-time medical image analysis, ultimately guiding the best appro
 -  Within 06 weeks, compare the performance (classification time) of FPGA and software platforms in classifying brain tumor images using the same dataset and algorithm, with a focus on measuring processing speed and efficiency.
 - Investigate and document the largest image size the PYNQ Z1 board can handle without significant performance degradation, by testing and measuring processing time at different image sizes, to be completed during 06 weeks.
 - Within 06 weeks, analyze the trade-offs between FPGA and software solutions in terms of speed, power, and scalability for real-time medical image analysis.
+- Built a neural network for lung cancer image classification with an accurancy of more than 90%
+
 
 ## Technology Stack:
 (List the hardware platform, software tools, language(s), etc. you plan to use)
@@ -39,6 +41,15 @@ solutions in real-time medical image analysis, ultimately guiding the best appro
 
 ## Tasks:
 (Describe the tasks that need to be completed. Assign students to tasks)
+1- Proposed system description descritpion for lung cancer image classification using jupyter notebook 
+We propose a system combining image analysis, an edge detector, and a 3-layer Convolution Neural Network as shown in the figure1. In the image analysis part, the system reads 
+the gray image, preprocesses it, detects edges, finally  normalizes it to a fixed size, and stores it as a binary image 
+array. For training and classification, it uses a 3-layer CNN  with a flattened layer and fully connected layer followed by an output layer of four classes. We used Python programming language to implement this system and used OpenCV for processing and analyzing images. Python modules pandas, NumPy, Matplotlib, Sklearn, TensorFlow modules, and Keras framework are used to build CNN model, training, and classification of lung cancer
+a. Description of the steps of the image classification with jupyter
+![image](https://github.com/user-attachments/assets/e1e4eea4-475e-44b2-8652-9d62e869a543)
+
 
 ## Timeline:
 (Provide a timeline or milestones for the project)
+
+## pro
