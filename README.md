@@ -8,10 +8,10 @@
 - Student 2: Ndjiakou Kaptue Maiva
 
 ## Project Title: Comparative Performance of Neural Network-Based Image Classification on FPGA and Software Applications
-(Enter your project title - be creative)
+
 
 ## Project Description:
-(Provide a short description of the problem you're addressing)
+
 The application used for this project is Jupyter, a popular open-source interactive computing environment that enables the development and execution of Python-based machine learning models. In this project, we will use Jupyter to train a neural network model to classify lung cancer images. These images will be preprocessed and labeled before being fed into the model for training. The trained model will then be evaluated by running the classification task both on the PYNQ Z1 FPGA board and within the Jupyter environment on a traditional software platform. The PYNQ Z1 FPGA board, equipped with specialized hardware for parallel processing, will be leveraged to accelerate the inference process, while Jupyter will serve as the software-based approach for classification, running on a general-purpose CPU. The methodology involves training the neural network model in Python using well-established deep learning libraries, such as PyTorch, and then evaluating the performance of the classification on both platforms. Key metrics, such as the classification time and accuracy, will be recorded and compared. Additionally, the limitations of the PYNQ Z1 FPGA board will be examined, particularly focusing on the maximum image size it can handle before performance starts to degrade. This methodology will provide a comprehensive comparison of the strengths and weaknesses of both FPGA and software
 solutions in real-time medical image analysis, ultimately guiding the best approach for scalable and efficient tumor detection systems.
 
