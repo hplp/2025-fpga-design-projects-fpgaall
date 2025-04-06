@@ -44,41 +44,35 @@ e.    Resources:
 ## Key Tasks/Steps for the Project:
 
 1. Research & Literature Review (Week 1)
-
  Objective: Understand existing CNN-based image classification methods and FPGA accelerators.
-
 Tasks:
 
-. Study the most commonly used CNN architectures for image classification (e.g., LeNet, AlexNet, VGGNet, ResNet).
-. Explore FPGA-based CNN accelerators.
-. Review medical image processing techniques, especially for lung cancer classification.
-. Understand FPGA hardware and tools (e.g., Xilinx Vivado, HLS, OpenCL, etc.).
+  . Study the most commonly used CNN architectures for image classification (e.g., LeNet, AlexNet, VGGNet, ResNet).
+  . Explore FPGA-based CNN accelerators.
+  . Review medical image processing techniques, especially for lung cancer classification.
+  . Understand FPGA hardware and tools (e.g., Xilinx Vivado, HLS, OpenCL, etc.).
 
 Duration: 1 week
 
 2. Dataset Preparation & Preprocessing (Week 1 - Week 2)
-
 Objective: Gather and preprocess the lung cancer image dataset.
-
  Tasks:
 
-. Collect a lung cancer dataset (Kaggle).
-. Preprocess the images (resize, normalize, augment) to feed into the CNN.
-. Split the dataset into training and validation sets.
-. Prepare labels for classification.
+  . Collect a lung cancer dataset (Kaggle).
+  . Preprocess the images (resize, normalize, augment) to feed into the CNN.
+  . Split the dataset into training and validation sets.
+  . Prepare labels for classification.
 
 Duration: 3 days 
 
  3. CNN Model Design and Training (Week 1 - Week 2)
-
 Objective: Design and train a CNN model for image classification.
-
  Tasks:
 
-. Choose an appropriate CNN architecture (e.g., a simple CNN or lightweight model like MobileNet if hardware constraints are a concern).
-. Train the model using the prepared dataset on a standard computing platform (e.g., using Python with TensorFlow or PyTorch).
-. Evaluate model performance (accuracy, precision, recall, etc.).
-. Save the trained model for deployment on FPGA.
+  . Choose an appropriate CNN architecture (e.g., a simple CNN or lightweight model like MobileNet if hardware constraints are a concern).
+  . Train the model using the prepared dataset on a standard computing platform (e.g., using Python with TensorFlow or PyTorch).
+  . Evaluate model performance (accuracy, precision, recall, etc.).
+  . Save the trained model for deployment on FPGA.
 
 Duration: 1 week
 
