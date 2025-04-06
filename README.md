@@ -47,10 +47,10 @@ e.    Resources:
  Objective: Understand existing CNN-based image classification methods and FPGA accelerators.
 Tasks:
 
-  . Study the most commonly used CNN architectures for image classification (e.g., LeNet, AlexNet, VGGNet, ResNet).
-  . Explore FPGA-based CNN accelerators.
-  . Review medical image processing techniques, especially for lung cancer classification.
-  . Understand FPGA hardware and tools (e.g., Xilinx Vivado, HLS, OpenCL, etc.).
+  - Study the most commonly used CNN architectures for image classification (e.g., LeNet, AlexNet, VGGNet, ResNet).
+  - Explore FPGA-based CNN accelerators.
+  - Review medical image processing techniques, especially for lung cancer classification.
+  - Understand FPGA hardware and tools (e.g., Xilinx Vivado, HLS, OpenCL, etc.).
 
 Duration: 1 week
 
@@ -58,10 +58,10 @@ Duration: 1 week
 Objective: Gather and preprocess the lung cancer image dataset.
  Tasks:
 
-  . Collect a lung cancer dataset (Kaggle).
-  . Preprocess the images (resize, normalize, augment) to feed into the CNN.
-  . Split the dataset into training and validation sets.
-  . Prepare labels for classification.
+  - Collect a lung cancer dataset (Kaggle).
+  - Preprocess the images (resize, normalize, augment) to feed into the CNN.
+  - Split the dataset into training and validation sets.
+  - Prepare labels for classification.
 
 Duration: 3 days 
 
@@ -69,10 +69,10 @@ Duration: 3 days
 Objective: Design and train a CNN model for image classification.
  Tasks:
 
-  . Choose an appropriate CNN architecture (e.g., a simple CNN or lightweight model like MobileNet if hardware constraints are a concern).
-  . Train the model using the prepared dataset on a standard computing platform (e.g., using Python with TensorFlow or PyTorch).
-  . Evaluate model performance (accuracy, precision, recall, etc.).
-  . Save the trained model for deployment on FPGA.
+  - Choose an appropriate CNN architecture (e.g., a simple CNN or lightweight model like MobileNet if hardware constraints are a concern).
+  - Train the model using the prepared dataset on a standard computing platform (e.g., using Python with TensorFlow or PyTorch).
+  - Evaluate model performance (accuracy, precision, recall, etc.).
+  - Save the trained model for deployment on FPGA.
 
 Duration: 1 week
 
@@ -80,10 +80,10 @@ Duration: 1 week
     Objective: Design and implement the CNN hardware accelerator for FPGA.
       Tasks:
 
-      . Break down the CNN layers into hardware components.
-      . Design hardware modules for each layer .
-      . Implement memory management to efficiently store and load image data and intermediate results.
-      . Optimize the design for parallel processing on FPGA.
+      - Break down the CNN layers into hardware components.
+      - Design hardware modules for each layer .
+      - Implement memory management to efficiently store and load image data and intermediate results.
+      - Optimize the design for parallel processing on FPGA.
 
 Duration: 1 week
 
@@ -91,10 +91,10 @@ Duration: 1 week
  Objective: Integrate the CNN hardware accelerator on FPGA and test functionality.
    Tasks:
   
-  . Integrate the CNN hardware accelerator with the FPGA platform
-  . Load the pre-trained model onto the FPGA.
-  . Run test images through the accelerator and validate that the FPGA correctly performs the classification task.
-  . Debug and resolve any issues in data flow or performance bottlenecks.
+  - Integrate the CNN hardware accelerator with the FPGA platform
+  - Load the pre-trained model onto the FPGA.
+  - Run test images through the accelerator and validate that the FPGA correctly performs the classification task.
+  - Debug and resolve any issues in data flow or performance bottlenecks.
 
 Duration: 1 week
 
@@ -102,22 +102,22 @@ Duration: 1 week
 Objective: Optimize the FPGA implementation for better performance and evaluate the results.
  Tasks:
 
-  .Implement hardware optimizations
-  . Measure the performance of the accelerator 
-  . Compare the FPGA results 
-  . Analyze accuracy and inference time on FPGA.
-  . Tune hyperparameters or hardware design for further improvements if needed.
-
+  -Implement hardware optimizations
+  - Measure the performance of the accelerator 
+  - Compare the FPGA results 
+  - Analyze accuracy and inference time on FPGA.
+  - Tune hyperparameters or hardware design for further improvements if needed.
+    
 Duration: 1 week
 
 7. Documentation and Final Report (Week 6)
 Objective: Complete the project documentation and prepare the final report.
 Tasks:
 
-  . Document the design process, including hardware design, model training, and implementation.
-  . Include diagrams, flowcharts, and explanations for each step.
-  . Write the final project report and presentation.
-  . Prepare a demonstration for the final presentation.
+  -Document the design process, including hardware design, model training, and implementation.
+  - Include diagrams, flowcharts, and explanations for each step.
+  - Write the final project report and presentation.
+  - Prepare a demonstration for the final presentation.
 
 Duration: 1 week
 
