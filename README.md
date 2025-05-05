@@ -252,6 +252,7 @@ Use of quantization-aware training for better hardware mapping
 Deployment of lightweight CNN variants (e.g., MobileNet, TinyML models)
 
 # Citation 
+
 @inproceedings{finn,
 author = {Umuroglu, Yaman and Fraser, Nicholas J. and Gambardella, Giulio and Blott, Michaela and Leong, Philip and Jahre, Magnus and Vissers, Kees},
 title = {FINN: A Framework for Fast, Scalable Binarized Neural Network Inference},
@@ -270,17 +271,30 @@ The repo is organized as follows:
 
 -BNN_PYNQ: 
 bnn: contains the LfcClassifier and CnvClassifier python class description
+
 src: contains the sources of the different precision networks, the libraries to rebuild them, and scripts to train and pack the weights:
+
 library: FINN library for HLS QNN descriptions, host code, script to rebuilt and drivers for the PYNQ and Ultra96 (please refer to README for more details)
+
 network: HLS top functions for QNN topologies (CNV and LFC) with different implementations for weight and activation precision, host code and make script for HW and SW build (please refer to README for more details)
+
 training: scripts to train on the Cifar10 that has been modified to classify our lung cancer dataset 
+
 pynqZ1-Z2: bitstreams for Pynq devices
+
 ultra96: bitstreams for Ultra96 devices
+
 libraries: pre-compiled shared objects for low-level driver of the 5 overlays each for hardware and software runtime
+
 pynqZ1-Z2: shared objects used by Pynq devices
+
 ultra96: shared objects used by ultra96
+
 params: set of trained parameters for the 5 overlays:
+
 MNIST and NIST dataset for LFC network. Note that NIST dataset is only applicable to LFC-W1A1 by default.
+
 Cifar10 , SVHN and German Road Signs dataset for CNV network. Note that SVHN and German Road Signs databases are only applicable to CNV-W1A1 by default.
+
 notebooks: lists a set of python notebooks examples, that during installation will be moved in /home/xilinx/jupyter_notebooks/bnn/ folder
 tests: contains test script and test images
