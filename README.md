@@ -1,7 +1,3 @@
-# Project_Template
-
-## Team Name:
-FPGAALL
 
 ## Team Members:
 - Student 1: Jazzmin Poitier
