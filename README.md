@@ -12,6 +12,7 @@ The application used for this project is Jupyter, a popular open-source interact
 solutions in real-time medical image analysis, ultimately guiding the best approach for scalable and efficient tumor detection systems.
 
 ## Objectives and Motivation:
+
 The motivation behind this project is driven by the need for fast and efficient image classification in critical applications like medical diagnostics, where timely and accurate analysis of lung cancer images can be life-saving. 
 -  Within 06 weeks, compare the performance (classification time) of FPGA and software platforms in classifying lung cancer images using the same dataset and algorithm, with a focus on measuring processing speed and efficiency.
 - Investigate and document the largest image size the PYNQ Z1 board can handle without significant performance degradation, by testing and measuring processing time at different image sizes, to be completed during 06 weeks.
@@ -20,6 +21,7 @@ The motivation behind this project is driven by the need for fast and efficient 
   
 
 ##  Technology Stack:
+
 (List the hardware platform, software tools, language(s), etc. you plan to use)
 a. Hardware Technologies:
    . PYNQ Z1 Board
@@ -37,10 +39,12 @@ d. Data Analysis Tools:
 e.    Resources:
 
 # Description of the differents steps of the project 
+
 the following software must be install vivado 2018.2, python 2.7( in the machine or install it in the virtual environment), ubuntu 2018+ 
 # I. Board setup
 
 1. connect the Board
+   
 We connected the PYNQ-Z1 board to our PC and retrieved its IP address to access it via a web browser.
 ![image](https://github.com/user-attachments/assets/da592bf3-43d6-4cb0-ae59-3fb2a39c9f9c) ![image](https://github.com/user-attachments/assets/7340f3e2-fbe1-479f-9dc6-aa460b602b57)
 
@@ -64,6 +68,7 @@ d.Turn on the PYNQ-Z1 and check the boot sequence:
 - Once your board is setup, you need to connect to it to start using Jupyter notebook.
   
 - Find the COM port for your virtual serial interface. Open Device Manager and find the COM port number (in my case it is COM20).
+  
 
 2. Get the Ip address of the board and access the board online
    
@@ -83,6 +88,7 @@ b. In microsoft start icon, search the applicatiob MobaXterm if installed in you
 
 If ask a password type : xilinx
 ![image (6)](https://github.com/user-attachments/assets/0bd77414-fa89-4882-9823-8e223e3e00a1)
+
 
 3. verify the pynq image present inside the SD card of the pynq board
    
@@ -106,6 +112,8 @@ b. To install a new pinq image
   
   ![image](https://github.com/user-attachments/assets/7175c02c-fa32-4195-b8ee-5ac86aadd472)
   ![image](https://github.com/user-attachments/assets/baf03734-94d8-4caf-bbac-ec5998b6b549)
+
+  
   
 # II Architecture selection and data preparation
 
@@ -124,9 +132,10 @@ the example notebook, the bnn package is first imported. The bnn.py file contain
 
 ![Capture d'écran 2025-04-24 204158](https://github.com/user-attachments/assets/c76a162a-88c7-45b2-9ce9-b81b575882f5)
 
+
 2. Architecture selection
-   
-   Once our development environment was set up and the board was running PYNQ v2.5, the next major step was to evaluate which neural network architecture would be best suited for our lung cancer classification task. The BNN-PYNQ framework comes with two primary overlay types: CNV, which is a convolutional network designed for RGB images sized 32 by 32, and LFC, which is a fully connected network typically used for grayscale images sized 28 by 28.
+
+Once our development environment was set up and the board was running PYNQ v2.5, the next major step was to evaluate which neural network architecture would be best suited for our lung cancer classification task. The BNN-PYNQ framework comes with two primary overlay types: CNV, which is a convolutional network designed for RGB images sized 32 by 32, and LFC, which is a fully connected network typically used for grayscale images sized 28 by 28.
    
 We started by running several prebuilt tutorials provided in the BNN-PYNQ repository to test both overlays—CNV and LFC—on the provided CIFAR-10 dataset. Our objective was to compare both hardware and software executions based on two key metrics: classification accuracy and inference time.
 
@@ -136,18 +145,21 @@ After comparing both options, we decided to proceed with the CNV architecture, a
 ![image](https://github.com/user-attachments/assets/d3de7c9e-b8bf-4d40-800a-e0c13aaf0c37)
 ![image](https://github.com/user-attachments/assets/450ba9c1-1364-47f5-ae33-f38ad6ad09db) ![image](https://github.com/user-attachments/assets/b62b5937-a591-45f5-b607-f61ade26484c)
 
+
 3. Data preparation
+   
 Our dataset was downloaded from Kaggle and required preprocessing before it could be used with the BNN overlay.
 The preprocessing included:
 
-a.  Writing Python scripts to reorganize the dataset into two labeled classes: benign and malignant.
+1.  Writing Python scripts to reorganize the dataset into two labeled classes: benign and malignant.
 
 ![image](https://github.com/user-attachments/assets/82d60f9f-d9f1-4aca-b5ca-56ef0cd4b936)
 
-b. Resizing all image data to compatible dimensions (32x32), to facilitate smoother integration with the FPGA overlay and ensure uniformity in training and inference.
+2. Resizing all image data to compatible dimensions (32x32), to facilitate smoother integration with the FPGA overlay and ensure uniformity in training and inference.
 
 ![image](https://github.com/user-attachments/assets/51a4a096-32a6-4053-a9f4-8e2d70b3aa37)
 ![image](https://github.com/user-attachments/assets/9b1d43ee-82fe-459a-ae4c-71fd939b5390)
+
 
 
 # III.  Train the software for image classification
@@ -161,11 +173,13 @@ sudo pip3.6 install git+https://github.com/Xilinx/BNN-PYNQ.git (on PYNQ v2.2 and
 To begin the hardware acceleration phase of our lung cancer classification project, I worked within the BNN-PYNQ repository, which provides pre-built binaries and scripts for deploying quantized neural networks on the PYNQ Z1 board. The first step involved adapting the existing cifar10.py file. Originally, this script is tailored for classifying images from the CIFAR-10 dataset. However, since my project focuses on binary classification—distinguishing between benign and malignant lung cancer—I modified this script to handle two classes instead of ten. I updated the preprocessing pipeline to resize our medical images to 32x32 pixels, which is required for compatibility with the underlying BNN architecture.
 ![image](https://github.com/user-attachments/assets/8f991d28-3e69-48d1-81ed-1b05d2d2a6f4)
 
+
 2.  create a python virtual environment
    
 a. open the ubuntu terminal and type the command line : python -m venv pynq_bnn_env
 
 b.Activate the virtual environment  with the command line:  source ~/pynq_bnn_env/bin/activate
+
 
 3. Train  the model locally in your machine
    
@@ -180,7 +194,9 @@ b. In the training file open the cifar.py file and modify it with the code you h
  - To exit: press Ctrl + X.
    
 c. type the command line : python cifar10.py to start the training of your model
+
 ![image](https://github.com/user-attachments/assets/8b35ffef-1e24-4fae-92c9-fa4dce24b765)
+
 
 # IV. Hardware for image classification 
 
@@ -199,6 +215,7 @@ to inspect the directory and confirm that the .npz file was generated. This .npz
 Why is this important? Because this compressed file bridges the training environment and the FPGA runtime. Without it, the model could not be ported or run on the actual board.
 ![image](https://github.com/user-attachments/assets/647a490d-4db7-481e-b139-6271c50d035b)
 
+
 2. Convert the training model into binary format
 
 However, these .npz files are not directly usable by the FPGA overlay. To bridge this gap, we used a tool called FINNthesizer, provided within the same framework. FINNthesizer is responsible for converting the high-level model into a low-level representation that the hardware overlay can understand.
@@ -211,6 +228,7 @@ CopyEdit
 python finnthesizer.py --network cnv --dataset lung_cancer
 ![image](https://github.com/user-attachments/assets/c254763d-775e-4442-b539-11ed6ef15d1d)
 
+
 3. Generating the FPGA bitsream
    
 After successfully converting our trained model into binary format using FINNthesizer, we moved to the final and most crucial step of the hardware implementation: generating the FPGA bitstream. This step is required to configure the programmable logic on the PYNQ-Z1 board so that it can execute our custom-trained BNN model.
@@ -222,7 +240,10 @@ css
 CopyEdit
 
 make-hw cnv-pynq pynqZ1-Z2 all
+
 ![image](https://github.com/user-attachments/assets/4e55d61c-ab86-4e7f-a395-a84a8866ec81)
+
+
 
 # V. Challenges Faced 
 
@@ -238,6 +259,7 @@ DNNWeaver raised Python errors in Jupyter environment
 
 Constrained memory on PYNQ Z1 limited full CNN deployment 
 
+
 # VI.  Results & Evaluation 
 
 Software  accuracy: ~ 71% 
@@ -252,6 +274,7 @@ FPGA usage: Within resource limits using binary weights, no full CNN due to comp
 
 This project demonstrates a hybrid classification architecture that balances software accuracy and hardware acceleration. Although a full CNN deployment was not feasible on the PYNQ Z1, the BNN-PYNQ model effectively served as a feature extractor. Software classification maintained high accuracy. Exploration of DNNWeaver and FINN highlighted current toolchain limitations. 
 
+
 # Future Work 
 
 Custom training of BNN with lung dataset 
@@ -264,6 +287,7 @@ Use of quantization-aware training for better hardware mapping
 
 Deployment of lightweight CNN variants (e.g., MobileNet, TinyML models)
 
+
 # Citation 
 
 @inproceedings{finn,
@@ -275,6 +299,7 @@ year = {2017},
 pages = {65--74},
 publisher = {ACM}
 }
+
 
 # Repo organization
 The repo is organized as follows:
