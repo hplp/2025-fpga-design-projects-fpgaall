@@ -307,7 +307,7 @@ The repo is organized as follows:
   
 - Report phase 2.2 error and Report phase 2.1 error : describe some of the errors we have faced during the project and the actions we have taken to solve them
   
--Lung_data_set  contains the Lung cancer image resized( 32*32) and reorganized ( 2 class: benign and malign ) fromm Kaggle website
+-Lung_data_set  contains the Lung cancer image resized( 32*32) and reorganized ( 2 class: benign and malign ) from Kaggle website
 
 -BNN_PYNQ: 
 
