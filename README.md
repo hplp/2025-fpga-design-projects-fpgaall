@@ -302,14 +302,16 @@ publisher = {ACM}
 
 
 # Repo organization
-The repo is organized as follows:
-- Report phase 2 : outline the differents steps during the phase 2 of the project
-  
-- Report phase 2.2 error and Report phase 2.1 error : describe some of the errors we have faced during the project and the actions we have taken to solve them
-  
--Lung_data_set  contains the Lung cancer image resized( 32*32) and reorganized ( 2 class: benign and malign ) from Kaggle website
 
--BNN_PYNQ: 
+The repo is organized as follows:
+
+1. Report phase 2 : outline the differents steps during the phase 2 of the project
+
+2. Report phase 2.2 error and Report phase 2.1 error : describe some of the errors we have faced during the project and the actions we have taken to solve them
+
+3. Lung_data_set  contains the Lung cancer image resized( 32*32) and reorganized ( 2 class: benign and malign ) from Kaggle website
+
+4. BNN_PYNQ: 
 
   * bnn: contains the LfcClassifier and CnvClassifier python class description
 
@@ -337,5 +339,6 @@ MNIST and NIST dataset for LFC network. Note that NIST dataset is only applicabl
 
 Cifar10 , SVHN and German Road Signs dataset for CNV network. Note that SVHN and German Road Signs databases are only applicable to CNV-W1A1 by default.
 
-- notebooks: lists a set of python notebooks examples, that during installation will be moved in /home/xilinx/jupyter_notebooks/bnn/ folder
-- tests: contains test script and test images
+5. notebooks: lists a set of python notebooks examples, that during installation will be moved in /home/xilinx/jupyter_notebooks/bnn/ folder
+
+6. tests: contains test script and test images
