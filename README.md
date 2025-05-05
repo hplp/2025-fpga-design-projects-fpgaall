@@ -39,6 +39,7 @@ e.    Resources:
 # Description of the differents steps of the project 
 the following software must be install vivado 2018.2, python 2.7( in the machine or install it in the virtual environment), ubuntu 2018+ 
 # I. Board setup
+
 1. connect the Board
 We connected the PYNQ-Z1 board to our PC and retrieved its IP address to access it via a web browser.
 ![image](https://github.com/user-attachments/assets/da592bf3-43d6-4cb0-ae59-3fb2a39c9f9c) ![image](https://github.com/user-attachments/assets/7340f3e2-fbe1-479f-9dc6-aa460b602b57)
@@ -57,7 +58,7 @@ e. The Red LD13 LED will come on immediately to confirm that the board has power
 f.After a minute you should see two Blue LD4 & LD5 LEDs and four Yellow/Green LD0-LD3 LEDs flash simultaneously. The Blue LD4-LD5 LEDs will then turn on and off while the Yellow/Green LD0-LD3 LEDs remain on. The system is now booted and ready for use. Network connection - Once your board is setup, you need to connect to it to start using Jupyter notebook.
 Find the COM port for your virtual serial interface. Open Device Manager and find the COM port number (in my case it is COM20).
 
-3. Get the Ip address of the board and access the board online
+2. Get the Ip address of the board and access the board online
 Verify that the board has been registered, then open the application mobaxterm to obtain the IP address of the board.
 
 a. Open device manager in microsft and search for USB connection, to find the COM where the board is connected in my case it is COM20
@@ -88,6 +89,7 @@ import pinq
 print (pynq.__version__)
 
 ![aaa](https://github.com/user-attachments/assets/2b8ef6cc-bfc1-47be-a021-c77c630574cf)
+
 b. To install a new pinq image
 
 - go to the link and follow the step to dowload a bootable pink image v 2.5, : https://pynq.readthedocs.io/en/latest/appendix/sdcard.html
@@ -102,7 +104,9 @@ b. To install a new pinq image
 1.  Install the BNN inside the jupyter notebook
    
 In a terminal inside our jupyter notebook  type the folowing command line 
+
 sudo pip3 install git+https://github.com/Xilinx/BNN-PYNQ.git (on PYNQ v2.3 and later versions, tested up to v2.5)
+
 sudo pip3.6 install git+https://github.com/Xilinx/BNN-PYNQ.git (on PYNQ v2.2 and earlier)
 
 In this directory we have several notebook . These notebooks use one of the two overlay ( an overlay is a  virtual, re-configurable architectures that sit on top of physical FPGA fabrics). It is specialized for an application, or a class of applications, offers both fast reconfiguration and minimized performance penalty.
@@ -113,6 +117,7 @@ the example notebook, the bnn package is first imported. The bnn.py file contain
 ![Capture d'écran 2025-04-24 204158](https://github.com/user-attachments/assets/c76a162a-88c7-45b2-9ce9-b81b575882f5)
 
 2. Architecture selection
+   
    Once our development environment was set up and the board was running PYNQ v2.5, the next major step was to evaluate which neural network architecture would be best suited for our lung cancer classification task. The BNN-PYNQ framework comes with two primary overlay types: CNV, which is a convolutional network designed for RGB images sized 32 by 32, and LFC, which is a fully connected network typically used for grayscale images sized 28 by 28.
    
 We started by running several prebuilt tutorials provided in the BNN-PYNQ repository to test both overlays—CNV and LFC—on the provided CIFAR-10 dataset. Our objective was to compare both hardware and software executions based on two key metrics: classification accuracy and inference time.
@@ -123,7 +128,7 @@ After comparing both options, we decided to proceed with the CNV architecture, a
 ![image](https://github.com/user-attachments/assets/d3de7c9e-b8bf-4d40-800a-e0c13aaf0c37)
 ![image](https://github.com/user-attachments/assets/450ba9c1-1364-47f5-ae33-f38ad6ad09db) ![image](https://github.com/user-attachments/assets/b62b5937-a591-45f5-b607-f61ade26484c)
 
-4. Data preparation
+3. Data preparation
 Our dataset was downloaded from Kaggle and required preprocessing before it could be used with the BNN overlay.
 The preprocessing included:
 
@@ -154,7 +159,7 @@ a. open the ubuntu terminal and type the command line : python -m venv pynq_bnn_
 
 b.Activate the virtual environment  with the command line:  source ~/pynq_bnn_env/bin/activate
 
-4. Train  the model locally in your machine
+3. Train  the model locally in your machine
    
 a. Inside the virtual environment, enter into your training file with the command line : cd /path/to/your/python/file
 
@@ -186,7 +191,7 @@ to inspect the directory and confirm that the .npz file was generated. This .npz
 Why is this important? Because this compressed file bridges the training environment and the FPGA runtime. Without it, the model could not be ported or run on the actual board.
 ![image](https://github.com/user-attachments/assets/647a490d-4db7-481e-b139-6271c50d035b)
 
-3. Convert the training model into binary format
+2. Convert the training model into binary format
 
 However, these .npz files are not directly usable by the FPGA overlay. To bridge this gap, we used a tool called FINNthesizer, provided within the same framework. FINNthesizer is responsible for converting the high-level model into a low-level representation that the hardware overlay can understand.
 We ran the FINNthesizer script with the following command:
