@@ -43,6 +43,7 @@ the following software must be install vivado 2018.2, python 2.7( in the machine
 1. connect the Board
 We connected the PYNQ-Z1 board to our PC and retrieved its IP address to access it via a web browser.
 ![image](https://github.com/user-attachments/assets/da592bf3-43d6-4cb0-ae59-3fb2a39c9f9c) ![image](https://github.com/user-attachments/assets/7340f3e2-fbe1-479f-9dc6-aa460b602b57)
+
 Set the JP4 / Boot jumper to the SD position by placing the jumper over the top two pins of JP4 as shown in the image. (This sets the board to boot from the Micro-SD card)
 To power the PYNQ-Z1 from the micro USB cable, set the JP5 / Power jumper to the USB position.
 
@@ -53,12 +54,19 @@ b.Connect the USB cable to your PC/Laptop, and to the PROG - UART / J14 MicroUSB
 c.Connect the board to Ethernet by following the instructions below
 
 d.Turn on the PYNQ-Z1 and check the boot sequence:
-e. The Red LD13 LED will come on immediately to confirm that the board has power. After a few seconds, the Yellow/Green LD12 / Done LED will light up to show that the Zynq® device is operational.
+ 
+ -The Red LD13 LED will come on immediately to confirm that the board has power. After a few seconds, the Yellow/Green LD12 / Done LED will light up to show that the Zynq® device is operational.
 
-f.After a minute you should see two Blue LD4 & LD5 LEDs and four Yellow/Green LD0-LD3 LEDs flash simultaneously. The Blue LD4-LD5 LEDs will then turn on and off while the Yellow/Green LD0-LD3 LEDs remain on. The system is now booted and ready for use. Network connection - Once your board is setup, you need to connect to it to start using Jupyter notebook.
-Find the COM port for your virtual serial interface. Open Device Manager and find the COM port number (in my case it is COM20).
+ - After a minute you should see two Blue LD4 & LD5 LEDs and four Yellow/Green LD0-LD3 LEDs flash simultaneously.
+   
+ - The Blue LD4-LD5 LEDs will then turn on and off while the Yellow/Green LD0-LD3 LEDs remain on. The system is now booted and ready for use. Network connection
+ 
+- Once your board is setup, you need to connect to it to start using Jupyter notebook.
+  
+- Find the COM port for your virtual serial interface. Open Device Manager and find the COM port number (in my case it is COM20).
 
 2. Get the Ip address of the board and access the board online
+   
 Verify that the board has been registered, then open the application mobaxterm to obtain the IP address of the board.
 
 a. Open device manager in microsft and search for USB connection, to find the COM where the board is connected in my case it is COM20
