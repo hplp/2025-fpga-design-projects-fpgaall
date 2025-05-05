@@ -16,7 +16,7 @@ The motivation behind this project is driven by the need for fast and efficient 
 -  Within 06 weeks, compare the performance (classification time) of FPGA and software platforms in classifying lung cancer images using the same dataset and algorithm, with a focus on measuring processing speed and efficiency.
 - Investigate and document the largest image size the PYNQ Z1 board can handle without significant performance degradation, by testing and measuring processing time at different image sizes, to be completed during 06 weeks.
 - Within 06 weeks, analyze the trade-offs between FPGA and software solutions in terms of speed, power, and scalability for real-time medical image analysis.
-- Built a neural network for lung cancer image classification with an accurancy of more than 90%
+- Built a neural network for lung cancer image classification with an accurancy of more than   70%
   
 
 ##  Technology Stack:
@@ -271,35 +271,38 @@ publisher = {ACM}
 # Repo organization
 The repo is organized as follows:
 - Report phase 2 : outline the differents steps during the phase 2 of the project
-- Report phase 2.2 error and Report phase 2.1 error : describe some of the errors we have faced during the project and the actions we have taken to solve them 
+  
+- Report phase 2.2 error and Report phase 2.1 error : describe some of the errors we have faced during the project and the actions we have taken to solve them
+  
 -Lung_data_set  contains the Lung cancer image resized( 32*32) and reorganized ( 2 class: benign and malign ) fromm Kaggle website
 
 -BNN_PYNQ: 
-bnn: contains the LfcClassifier and CnvClassifier python class description
 
-src: contains the sources of the different precision networks, the libraries to rebuild them, and scripts to train and pack the weights:
+  * bnn: contains the LfcClassifier and CnvClassifier python class description
 
-library: FINN library for HLS QNN descriptions, host code, script to rebuilt and drivers for the PYNQ and Ultra96 (please refer to README for more details)
+  * src: contains the sources of the different precision networks, the libraries to rebuild them, and scripts to train and pack the weights:
 
-network: HLS top functions for QNN topologies (CNV and LFC) with different implementations for weight and activation precision, host code and make script for HW and SW build (please refer to README for more details)
+  * library: FINN library for HLS QNN descriptions, host code, script to rebuilt and drivers for the PYNQ and Ultra96 (please refer to README for more details)
 
-training: scripts to train on the Cifar10 that has been modified to classify our lung cancer dataset 
+  * network: HLS top functions for QNN topologies (CNV and LFC) with different implementations for weight and activation precision, host code and make script for HW and SW build (please refer to README for more details)
 
-pynqZ1-Z2: bitstreams for Pynq devices
+  * training: scripts to train on the Cifar10 that has been modified to classify our lung cancer dataset 
 
-ultra96: bitstreams for Ultra96 devices
+  * pynqZ1-Z2: bitstreams for Pynq devices
 
-libraries: pre-compiled shared objects for low-level driver of the 5 overlays each for hardware and software runtime
+  * ultra96: bitstreams for Ultra96 devices
 
-pynqZ1-Z2: shared objects used by Pynq devices
+  * libraries: pre-compiled shared objects for low-level driver of the 5 overlays each for hardware and software runtime
 
-ultra96: shared objects used by ultra96
+  * pynqZ1-Z2: shared objects used by Pynq devices
 
-params: set of trained parameters for the 5 overlays:
+  * ultra96: shared objects used by ultra96
+
+  *  params: set of trained parameters for the 5 overlays:
 
 MNIST and NIST dataset for LFC network. Note that NIST dataset is only applicable to LFC-W1A1 by default.
 
 Cifar10 , SVHN and German Road Signs dataset for CNV network. Note that SVHN and German Road Signs databases are only applicable to CNV-W1A1 by default.
 
-notebooks: lists a set of python notebooks examples, that during installation will be moved in /home/xilinx/jupyter_notebooks/bnn/ folder
-tests: contains test script and test images
+- notebooks: lists a set of python notebooks examples, that during installation will be moved in /home/xilinx/jupyter_notebooks/bnn/ folder
+- tests: contains test script and test images
