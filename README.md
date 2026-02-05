@@ -1,9 +1,14 @@
 
-## Team Members:
-- Student 1: Jazzmin Poitier
-- Student 2: Ndjiakou Kaptue Maiva
-
 ## Project Title: Comparative Performance of Neural Network-Based Image Classification on FPGA and Software Applications
+**Author:** Maiva Ndjiakou Kaptue  
+**Collaborator:** Jazzmin Poitier  
+
+This repository is based on a team academic project. The repository structure,
+software organization, and documentation reflect Maiva Ndjiakou Kaptue’s
+individual work in consolidating, extending, and presenting the project for
+professional and research-oriented purposes.
+
+
 
 
 ## Project Description:
